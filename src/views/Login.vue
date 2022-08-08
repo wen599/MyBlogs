@@ -34,6 +34,8 @@ import Button from '@/lib/Button.vue'
 import WheelInput from '@/lib/WheelInput.vue'
 import { toast } from '@/lib/Toast/Toast'
 import { Ref } from 'vue'
+import { loginRequest } from '@/request/request'
+import router from '@/router'
 
 const userName:Ref<string> = ref('admin')
 const userNameError:Ref<string> = ref('')
@@ -59,9 +61,26 @@ const login = () => {
       content: '请输入密码',
       type: 'error'
     })
-    return
   }
-  console.log(userName.value, password.value)
+  const response = loginRequest({
+    userName: userName.value,
+    password: password.value
+  })
+  response.then((res: { states: number; message: any; token: string }) => {
+    if (res.states === 1) {
+      toast({
+        type: 'error',
+        content: res.message
+      })
+    } else {
+      toast({
+        type: 'success',
+        content: res.message
+      })
+      sessionStorage.setItem('MyBlogsToken', res.token)
+      router.push('/manage')
+    }
+  })
 }
 </script>
 

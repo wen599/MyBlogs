@@ -1,2 +1,17 @@
 $backgroundColor:#aebebb;
-$backgroundColor1:#f8f8f8;
+$backgroundColor1: #f1fcf8;
+$fontColor:#1f1f1f;
+$fontColorHover:#a6adaf;
+.container{
+  width: 878px;
+  margin: 22px auto;
+  background-color: $backgroundColor1;
+  padding: 50px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.35);
+  @media (max-width: 900px) {
+    width: 100%;
+    padding: 30px;
+    box-shadow: 0 0 0;
+    margin: 0;
+  }
+}
