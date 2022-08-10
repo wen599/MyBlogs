@@ -68,7 +68,7 @@ $error-color:#f1453d;
 }
 .wheel-input-container{
   font-size: $font-size;
-  display: flex;
+  display: inline-flex;
   align-items: center;
 
   &.error{

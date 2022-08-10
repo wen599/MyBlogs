@@ -3,7 +3,7 @@ import Dialog from '@/lib/Dialog.vue'
 type Options={
   title?:string
   content?:string
-  confirm?:()=>void
+  confirm?:()=>boolean
   cancel?:()=>void
   onClickMaskClose?:boolean
 }
@@ -17,7 +17,7 @@ export const showDialog = (options:Options) => {
       return h(Dialog, {
         visible: visible.value,
         'onUpdate:visible': (date:boolean) => {
-          if (date === false) {
+          if (!date) {
             visible.value = false
             setTimeout(() => {
               app.unmount()

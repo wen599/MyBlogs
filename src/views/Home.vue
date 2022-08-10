@@ -6,20 +6,13 @@
     </div>
     <h3>最新文章</h3>
     <ul class="article-list">
-      <li class="article-item">
-          <p class="article-name">测试</p>
-          <p class="article-time">2022-06</p>
+      <li class="article-item" v-for="item in articleList" :key="item.id">
+          <p class="article-name" @click="gotoDetail(item.id)">{{ item.name }}</p>
+          <p class="article-time">{{formatDate(item.time) }}</p>
       </li>
-      <li class="article-item">
-        <p class="article-name">测试</p>
-        <p class="article-time">2022-06</p>
-      </li>
-      <li class="article-item">
-        <p class="article-name">测试</p>
-        <p class="article-time">2022-06</p>
-      </li>
+
       <li class="article-item ">
-        <h3 class="more">更多文章</h3>
+        <h3 class="more"><router-link to="/article">更多文章...</router-link></h3>
       </li>
     </ul>
   </div>
@@ -27,6 +20,46 @@
 
 <script setup lang='ts'>
 import Title from '@/components/Title.vue'
+import { findAllArticle } from '@/request/request'
+import { toast } from '@/lib/Toast/Toast'
+import { formatDate } from '@/Uitl/Util'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+type articleObj={
+  id:number,
+  time:string,
+  name:string
+}
+const articleList:articleObj[] = reactive([])
+const getArticleList = () => {
+  const response = findAllArticle(10)
+  response.then((res:{status:number, message:string, date?:articleObj[]}) => {
+    if (res.status === 1) {
+      toast({
+        type: 'error',
+        content: res.message,
+        time: 1000
+      })
+    }
+    while (articleList.length > 0) {
+      articleList.shift()
+    }
+    console.log(res)
+    if (res.date) articleList.push(...res.date)
+  })
+}
+const gotoDetail = (id:number) => {
+  router.push({
+    path: '/read',
+    query: {
+      id
+    }
+  })
+}
+
+getArticleList()
+
 </script>
 
 <style scoped lang='scss'>
@@ -38,6 +71,7 @@ import Title from '@/components/Title.vue'
 }
 h3{
   margin: 20px 0 10px;
+
 }
 
 .article-list{

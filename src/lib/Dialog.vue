@@ -33,7 +33,7 @@ import Button from '@/lib/Button.vue'
 type Props={
   visible?:boolean
   onClickMaskClose?:boolean
-  confirm?:Function,
+  confirm?:()=>boolean,
   cancel?:Function
 }
 const props = withDefaults(defineProps<Props>(), {
@@ -51,8 +51,8 @@ const closeMask = () => {
   if (props.onClickMaskClose)closeDialog()
 }
 const yes = () => {
-  props.confirm?.()
-  closeDialog()
+  const flog = props.confirm?.()
+  if (flog) { closeDialog() }
 }
 const no = () => {
   props.cancel?.()

@@ -8,7 +8,12 @@ const routes:Readonly<RouteRecordRaw[]> = [
   { path: '/login', component: () => import('@/views/Login.vue') },
   { path: '/manage', component: () => import('@/views/Manage.vue') },
   { path: '/article', component: () => import('@/views/Article.vue') },
-  { path: '/about', component: () => import('@/views/About.vue') }
+  { path: '/about', component: () => import('@/views/About.vue') },
+  { path: '/create', component: () => import('@/views/Create.vue') },
+  { path: '/edit', component: () => import('@/views/Edit.vue') },
+  { path: '/detail', component: () => import('@/views/Detail.vue') },
+  { path: '/read', component: () => import('@/views/ArticleDetail.vue') }
+
 ]
 
 const router = createRouter({
@@ -16,7 +21,7 @@ const router = createRouter({
   routes
 })
 
-const publicRouterList = ['/login', '/home', '/article', '/about']
+const publicRouterList = ['/login', '/home', '/article', '/about', '/read']
 
 router.beforeEach((to, from, next) => {
   if (publicRouterList.find((item) => item === to.path)) {

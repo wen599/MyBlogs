@@ -66,7 +66,7 @@ const login = () => {
     userName: userName.value,
     password: password.value
   })
-  response.then((res: { states: number; message: any; token: string }) => {
+  response.then((res: { states: number; message: string; token: string }) => {
     if (res.states === 1) {
       toast({
         type: 'error',

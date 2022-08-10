@@ -74,7 +74,7 @@ switch (props.type) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 9;
+  z-index: 99;
 }
 .wheel-toast-fade-enter-from,
 .wheel-toast-fade-leave-to{
