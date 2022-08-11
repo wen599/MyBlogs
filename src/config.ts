@@ -1,3 +1,4 @@
-// 请求根路径
-const requestBaseURL = 'http://127.0.0.1:8000/'
+// 请求根路径 'http://47.98.109.168:8000'
+const requestBaseURL = 'http://abc.lxw599.top:8000'
+
 export { requestBaseURL }

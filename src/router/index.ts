@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
 import { checkingRequest } from '@/request/request'
 
@@ -17,7 +17,7 @@ const routes:Readonly<RouteRecordRaw[]> = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes
 })
 
@@ -31,9 +31,7 @@ router.beforeEach((to, from, next) => {
     const token = sessionStorage.getItem('MyBlogsToken')
     if (token === null) return next('/login')
     checkingRequest().then((res:{status:number, message:any}) => {
-      console.log(res)
       if (res.status === 401) {
-        console.log(res.message)
         return next('/login')
       }
       next()

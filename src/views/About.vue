@@ -2,7 +2,7 @@
   <div class="container">
     <Title></Title>
     <div class="img">
-      <img src="src/assets/img/90c0522a3d32c96b818eb66fcd68f38.jpg">
+      <img src="../../public/img/90c0522a3d32c96b818eb66fcd68f38.jpg">
     </div>
     <p class="introduce">小文 @ 成都,无业</p>
     <h3>找到我</h3>

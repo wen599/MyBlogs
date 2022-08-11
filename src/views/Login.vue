@@ -37,9 +37,9 @@ import { Ref } from 'vue'
 import { loginRequest } from '@/request/request'
 import router from '@/router'
 
-const userName:Ref<string> = ref('admin')
+const userName:Ref<string> = ref('')
 const userNameError:Ref<string> = ref('')
-const password:Ref<string> = ref('lxw170108')
+const password:Ref<string> = ref('')
 const passwordError:Ref<string> = ref('')
 
 const reset = () => {

@@ -2,7 +2,7 @@
   <div class="title">
     <h1 class="title-text">
       <router-link to="/manage">呆萌小老二</router-link>
-      <img class="portrait" src="src/assets/img/cbfb5836769ec991be9e3023c8af263.jpg"></h1>
+      <img class="portrait" src="../../../public/img/cbfb5836769ec991be9e3023c8af263.jpg"></h1>
   </div>
 </template>
 

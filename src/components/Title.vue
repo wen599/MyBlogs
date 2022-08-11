@@ -2,7 +2,7 @@
   <div class="title">
     <h1 class="title-text">
       <router-link to="/home">呆萌小老二</router-link>
-      <img class="portrait" src="src/assets/img/cbfb5836769ec991be9e3023c8af263.jpg"></h1>
+      <img class="portrait" src="../../public/img/cbfb5836769ec991be9e3023c8af263.jpg"></h1>
     <div class="title-content">
       <router-link class="title-content-name" to="/home">小文的个人博客</router-link>
       <div class="title-content-nav">

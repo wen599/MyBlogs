@@ -2,7 +2,7 @@
   <div class="container">
     <Title></Title>
     <div class="img">
-      <img src="src/assets/img/c5f64a155714fb87c6e33eca7049100.png">
+      <img src="../../public/img/c5f64a155714fb87c6e33eca7049100.png">
     </div>
     <h3>最新文章</h3>
     <ul class="article-list">
@@ -45,7 +45,6 @@ const getArticleList = () => {
     while (articleList.length > 0) {
       articleList.shift()
     }
-    console.log(res)
     if (res.date) articleList.push(...res.date)
   })
 }

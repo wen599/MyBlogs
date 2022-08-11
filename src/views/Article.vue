@@ -4,7 +4,7 @@
     <p class="text">总计<span class="text-number">{{articleList.length}}</span>篇文章</p>
     <ul>
       <li class="list-item" v-for="item in list" :key="item.month">
-          <h2>{{item.month+'('+item.children.length+')'}}</h2>
+          <h4>{{item.month+'('+item.children.length+')'}}</h4>
           <ul>
             <li v-for="i in item.children" :key="i.id" class="article">
               <div class="name" @click="gotoRead(i.id)">
