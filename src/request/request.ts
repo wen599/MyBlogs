@@ -103,7 +103,7 @@ const updateArticle = async (data:Update) => {
 const findKeyword = async (keyword:string) => {
   const { data: res } = await request({
     method: 'GET',
-    url: 'api/findKeyword',
+    url: 'public/findKeyword',
     params: {
       keyword
     }

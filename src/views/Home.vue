@@ -2,7 +2,7 @@
   <div class="container">
     <Title></Title>
     <div class="img">
-      <img src="../../public/img/c5f64a155714fb87c6e33eca7049100.png">
+      <img src="../../public/img/e3eef087e075969ea40670f947f6deb.jpg">
     </div>
     <h3>最新文章</h3>
     <ul class="article-list">

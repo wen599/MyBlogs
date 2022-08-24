@@ -81,6 +81,7 @@ const clickConfirm = () => {
       })
     }
   })
+  localStorage.setItem('create', '')
   router.push('/manage')
   return true
 }

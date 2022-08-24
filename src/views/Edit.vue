@@ -41,11 +41,6 @@ getArticleContent(id).then((res:{status:number, message:string, data?:[{content:
       content: res.message
     })
   } else {
-    toast({
-      type: 'success',
-      time: 1000,
-      content: res.message
-    })
     if (res.data?.[0].content) {
       text.value = res.data[0].content
     }
